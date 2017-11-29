@@ -4,11 +4,11 @@ body {
 
 .form {
     border: 10px solid #D9D9D9;
-    margin: 70px 400px;
+    margin: 70px 50px;
     background-color: white;
 }
 
-input[type=text], input[type=password] {
+input[type=text] {
     width: 100%;
     padding: 10px 10px;
     margin: 10px 0;
@@ -24,7 +24,7 @@ button {
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 100%;
+    width: 20%;
 }
 
 button:hover {
@@ -33,7 +33,7 @@ button:hover {
 
 .login {
     text-align: center;
-    margin: 24px 0 12px 0;
+    margin: 24px 0 50px 0;
 }
 
 .header {
@@ -44,10 +44,29 @@ button:hover {
 .container {
     padding-top: 50px;
     padding-bottom: 50px;
-    padding-right: 50px;
+    padding-right: 900px;
     padding-left: 50px;
 }
 
-h2.search {
-    text-align: center;
+h1 {
+    font-weight: bold;
 }
+h2 {
+    text-align: center;
+    font-weight: bold;
+}
+
+ol {
+    background: #ccc;
+    padding: 20px;
+}
+
+ol li {
+    background: white;
+    padding: 5px;
+    margin-left: 35px;
+    font-family: helvetica;
+    font-size: 20px;
+    font-weight: bold;
+}
+ol li:nth-child(odd) { background: #4484CE; }

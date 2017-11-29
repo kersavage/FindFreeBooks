@@ -4,9 +4,6 @@ function search() {
 	var getURL = "https://www.googleapis.com/books/v1/volumes?q=" + searchString + "&filter=free-ebooks&key=AIzaSyA-8ljiTTPG7KeuylwBhzjwL3X8J4YM98o";
 	console.log("getURL: " + getURL);
 
-	// Set up the parameters to send to the API
-	var params = {s: searchString, apikey:"fill_this_in_with_the_correct_key"};
-
 	// Use jQuery to make the get request
 	$.get(getURL, function(error, response, body){
 		// For debugging purposes, make a note that we're back
@@ -21,9 +18,27 @@ function updateResultList(body) {
 		var resultList = $("#ulResults");
 		resultList.empty();
 
+		if(body.responseJSON.items.length == 0) {
+			console.log("In if == 0");
+			resultList.append("<li><p>No Results</p></li>");
+		}
+				
+		if(body.responseJSON.items.length > 0) {
+
 		for (var i = 0; i < body.responseJSON.items.length; i++) {
 			var title = JSON.stringify(body.responseJSON.items[i].volumeInfo.title);
-			resultList.append("<li><p>" + title + "</p></li>");
+			title = title.replace(/\"/g, "");
+			
+			if(body.responseJSON.items[i].volumeInfo.authors){
+				var author = JSON.stringify(body.responseJSON.items[i].volumeInfo.authors[0]);
+				author = author.replace(/\"/g, "");
+			}
+			else {
+				author = "Author Unkown";
+			}
+			
+			resultList.append("<li><pre>Title:  " + title + "<br>Author: " + author +"</pre></li>");
 		}
+	}
 
 }
