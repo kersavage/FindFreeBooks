@@ -4,6 +4,8 @@
 var express = require('express');
 var app = express();
 var url = require('url');
+var https = require('https');
+var request = require('request');
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -15,6 +17,16 @@ app.set('view engine', 'ejs');
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
+
+    	/*request('https://www.googleapis.com/books/v1/volumes?q=flowers&filter=free-ebooks&key=AIzaSyA-8ljiTTPG7KeuylwBhzjwL3X8J4YM98o', function(error, response, body){
+		 	if (!error && response.statusCode == 200) {
+    			console.log("Here is the body: " + body) } // Print the google web page.
+
+    		if(response.statusCode != 200) {
+    			console.log("There was an error: " + error);
+    	}
+});*/
+
 });
 
 app.get('/login', function(request, response) {
@@ -36,4 +48,3 @@ function login(request, response) {
 	response.render('pages/webnotes', credentials);
 
 }
-
