@@ -1,29 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="style.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="booksSearch.js"></script>
+	<title>Test Form</title>
+	<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+	<script src="test.js"></script>
 </head>
-
 <body>
-<div class="header">
-    <h1>Search books that are currently free on Google Books</h1>
-  </div>
+<div>
+	<input type="text" id="username" placeholder="username"><br>
+	<input type="password" id="password" placeholder="password"><br>
+	<button onclick="login();">Log in</button>
+	<button onclick="logout();">Log out</button><br>
+	<br>
+	<button onclick="getServerTime()">Get server time</button>
+	<div id="status"></div>
+</div>
 
-  <div class="form">
-  <h2 class="search">Search</h2>
-
-  <div class="container">
-    <p>Please enter your search parameters:</p>
-    <input type="text" placeholder="Enter A Title" id="txtSearch">
-    <button onclick="search();">Search</button>
-
-    <div id="divResults">
-      <h2>Results</h2>
-      <ul id="ulResults">
-      </ul>
-    </div>
-  </div>
 </body>
 </html>

@@ -9,7 +9,6 @@ function search() {
 		// For debugging purposes, make a note that we're back
 		console.log("Back from server with the following results:");
 		console.log(body);
-		console.log("Here is a thing: " + JSON.stringify(body.responseJSON.items[0].volumeInfo.title));
     	updateResultList(body);
 	});
 }
@@ -18,17 +17,26 @@ function updateResultList(body) {
 		var resultList = $("#ulResults");
 		resultList.empty();
 
-		if(body.responseJSON.items.length == 0) {
-			console.log("In if == 0");
+		if(!body.responseJSON.items) {
+			console.log("No results");
 			resultList.append("<li><p>No Results</p></li>");
 		}
 				
-		if(body.responseJSON.items.length > 0) {
+		if(body.responseJSON.items) {
 
 		for (var i = 0; i < body.responseJSON.items.length; i++) {
 			var title = JSON.stringify(body.responseJSON.items[i].volumeInfo.title);
 			title = title.replace(/\"/g, "");
 			
+			var pdf = JSON.stringify(body.responseJSON.items[i].accessInfo.pdf.downloadLink);
+			pdf = pdf.replace(/\"/g, "");
+
+			var bookId = JSON.stringify(body.responseJSON.items[i].id);
+			bookId = bookId.replace(/\"/g, "");
+
+			var thumbnail = JSON.stringify(body.responseJSON.items[i].volumeInfo.imageLinks.thumbnail);
+			thumbnail = thumbnail.replace(/\"/g, "");
+
 			if(body.responseJSON.items[i].volumeInfo.authors){
 				var author = JSON.stringify(body.responseJSON.items[i].volumeInfo.authors[0]);
 				author = author.replace(/\"/g, "");
@@ -36,8 +44,21 @@ function updateResultList(body) {
 			else {
 				author = "Author Unkown";
 			}
-			
-			resultList.append("<li><pre>Title:  " + title + "<br>Author: " + author +"</pre></li>");
+			var displayList = "<li><pre>Title: " + title + "<br>Author: " + author + "<br>Google Book ID: " + bookId;
+			displayList += '<br><img src="' + thumbnail + '" alt="Image Unavailable">';
+
+			if(body.responseJSON.items[i].accessInfo.pdf.isAvailable){
+				displayList += "<br><button onClick=";
+				displayList += '"';
+				displayList += "window.open('" + pdf + "','_blank')";
+				displayList += '"';
+				displayList += ">View PDF</button></pre></li>";
+			}
+			else {
+				var displayList = displayListm + "<br>PDF is unavailable</pre></li>"
+			}
+
+			resultList.append(displayList);
 		}
 	}
 

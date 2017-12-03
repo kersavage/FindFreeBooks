@@ -8,15 +8,20 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "node test.js"
+    "test": "node test.js",
+    "watch": "nodemon server.js"
   },
   "dependencies": {
     "ejs": "^2.5.6",
     "express": "4.16.2",
+    "express-session": "^1.15.6",
     "google-books-search": "^0.3.1",
-    "pg": "^7.4.0"
+    "morgan": "^1.9.0",
+    "pg": "^7.4.0",
+    "session-file-store": "^1.2.0"
   },
   "devDependencies": {
+    "nodemon": "^1.12.1",
     "request": "^2.83.0",
     "tape": "^4.7.0"
   },
