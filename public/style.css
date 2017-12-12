@@ -31,11 +31,6 @@ button:hover {
     opacity: 0.8;
 }
 
-.login {
-    text-align: center;
-    margin: 10px 0 10px 0;
-}
-
 .header {
     text-align: center;
     font-family: arial;
@@ -55,6 +50,7 @@ h1 {
     font-family: arial;
     font-size: 50px;
 }
+
 h2 {
     text-align: left;
     font-weight: bold;
@@ -72,6 +68,3 @@ ol li {
     border-bottom: 1px grey;
     word-wrap: break-word;
 }
-
-.moreOptions {
-   }

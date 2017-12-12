@@ -72,6 +72,8 @@ function updateResultList(body) {
 				else {
 					var displayList = displayList + "<br>PDF is unavailable</pre></li>"
 				}
+
+				// Append the results to the list
 				displayList += "<br>";
 				resultList.append(displayList);
 		}
@@ -79,6 +81,7 @@ function updateResultList(body) {
 
 }
 
+// Hide or reveal the extra search options
 window.onload = function () {
     var link = document.getElementById("hideMenu");
     var div = document.getElementById("menu");
