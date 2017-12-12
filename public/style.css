@@ -4,7 +4,7 @@ body {
 
 .form {
     border: 10px solid #D9D9D9;
-    margin: 70px 50px;
+    margin: 7px 50px;
     background-color: white;
 }
 
@@ -18,7 +18,7 @@ input[type=text] {
 }
 
 button {
-    background-color: #F9CF00;
+    background-color: #4484CE;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -33,16 +33,16 @@ button:hover {
 
 .login {
     text-align: center;
-    margin: 24px 0 50px 0;
+    margin: 10px 0 10px 0;
 }
 
 .header {
     text-align: center;
-    font-family: helvetica;
+    font-family: arial;
+    padding-top: 10px;
 }
 
 .container {
-    padding-top: 50px;
     padding-bottom: 50px;
     padding-right: 900px;
     padding-left: 50px;
@@ -50,23 +50,28 @@ button:hover {
 
 h1 {
     font-weight: bold;
+    text-align: center;
+    color: #060b7a;
+    font-family: arial;
+    font-size: 50px;
 }
 h2 {
-    text-align: center;
+    text-align: left;
     font-weight: bold;
-}
-
-ol {
-    background: #ccc;
-    padding: 20px;
+    padding-left: 50px;
+    padding-top: 10px;
 }
 
 ol li {
     background: white;
     padding: 5px;
-    margin-left: 35px;
-    font-family: helvetica;
+    margin-left: 20px;
+    font-family: arial;
     font-size: 20px;
-    font-weight: bold;
+    list-style-type: none;
+    border-bottom: 1px grey;
+    word-wrap: break-word;
 }
-ol li:nth-child(odd) { background: #4484CE; }
+
+.moreOptions {
+   }

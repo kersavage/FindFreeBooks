@@ -7,22 +7,37 @@
 </head>
 
 <body>
-
+<div class="form">
   <div class="header">
-    <h1>Find Free Books</h1>
+    <br><br><br><br><h1>Find Free Books<h1>
   </div>
 
-  <div class="form">
+  
   <h2>Search books that are currently free on Google Books</h2>
   <div class="container">
     
-    <h3>Search by title, author, book ID, or keyword:</h3>
-    <input type="text" placeholder="Enter A Title" id="txtSearch">
-    <button onclick="search();">Search</button>
+    <input type="text" placeholder="Enter A title, author, or keyword" id="txtSearch">
+
+    <a id="hideMenu" href="#">More Search Options</a><br>
+
+    <div id="menu" class="moreOptions" style="display: none;">
+    <h3>How many entries would you like to display:</h3>
+    <input type="radio" name="number" value="10" checked>10<br>
+    <input type="radio" name="number" value="20">20<br>
+    <input type="radio" name="number" value="40">40
+    <br><br>
+
+    <h3>Sort by:</h3>
+    <select id="sort">
+      <option value="relevance">Relevance</option>
+      <option value="newest">Newest</option>
+    </select><br><br>
+  </div>
+    <button onclick="search();"><b>Search</b></button>
+  </form>
   </div>
   
     <div id="divResults">
-      <h2>Results</h2>
       <ol id="ulResults">
       </ol>
     </div>
